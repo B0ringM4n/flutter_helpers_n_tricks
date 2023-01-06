@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:helpers_n_tricks/app/app.dart';
-import 'package:helpers_n_tricks/counter/counter.dart';
+import 'package:helpers_n_tricks/features/app/app.dart';
+import 'package:helpers_n_tricks/features/counter/counter.dart';
 
 void main() {
   group('App', () {
