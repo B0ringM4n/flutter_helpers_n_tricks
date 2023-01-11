@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helpers_n_tricks/features/neumorphic_theme_n_style/presentation/view/page.dart';
+import 'package:helpers_n_tricks/config/router/routes.dart';
+import 'package:helpers_n_tricks/features/home/presentation/widgets/section_option_card.dart';
 
 class HomeMobileView extends StatelessWidget {
   const HomeMobileView({super.key});
@@ -27,20 +28,21 @@ class HomeMobileView extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
-              Card(
-                child: ListTile(
-                  title: Text(
-                    'Temas y estilos',
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute<dynamic>(
-                        builder: (_) => const NeumorphicThemeNStylePage(),
-                      ),
-                    );
-                  },
-                ),
+              SectionOptionCard(
+                title: 'Temas y estilos',
+                onTap: () {
+                  Navigator.of(context).pushNamed(
+                    AppRoutes.themeNStyleNeumorphic,
+                  );
+                },
+              ),
+              SectionOptionCard(
+                title: 'Listas',
+                onTap: () {
+                  Navigator.of(context).pushNamed(
+                    AppRoutes.listsReorderable,
+                  );
+                },
               ),
             ],
           ),
