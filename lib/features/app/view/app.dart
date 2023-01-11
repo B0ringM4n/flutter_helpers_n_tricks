@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:helpers_n_tricks/config/router/flutter_delegate.dart';
 import 'package:helpers_n_tricks/config/theme/default.dart';
-import 'package:helpers_n_tricks/features/home/presentation/view/page.dart';
 import 'package:helpers_n_tricks/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -16,7 +16,8 @@ class App extends StatelessWidget {
       theme: theme.themeData,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomePage(),
+      initialRoute: AppRoutes.home,
+      onGenerateRoute: RouterFlutterDelegate.onGenerateRoute,
     );
   }
 }
