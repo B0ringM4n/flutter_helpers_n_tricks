@@ -22,11 +22,8 @@ class ReorderableListMobileView extends StatefulWidget {
 class _ReorderableListMobileViewState extends State<ReorderableListMobileView> {
   void reorderData(int oldindex, int newindex) {
     setState(() {
-      if (newindex > oldindex) {
-        newindex -= 1;
-      }
       final items = widget.item.removeAt(oldindex);
-      widget.item.insert(newindex, items);
+      widget.item.insert(newindex > oldindex ? newindex - 1 : newindex, items);
     });
   }
 
